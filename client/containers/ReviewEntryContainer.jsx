@@ -44,8 +44,6 @@ function getReviewDets() {
   const myPostBody = [daDeets, reviewDeets]
   console.log('🔴🟠🟡🟢🔵🟣 | file: ReviewEntryContainer.jsx | line 64 | getReviewDets | myPostBody', myPostBody);
 
-  
-  
   // useEffect(() => {
     fetch('http://localhost:3000/newRating', {
       method: 'POST',
@@ -55,11 +53,12 @@ function getReviewDets() {
       body: JSON.stringify(myPostBody)
 })
       .then(response => response.json())
-      .then(data => {
-      console.log('🔴🟠🟡🟢🔵🟣 | file: ReviewEntryContainer.jsx | line 80 | useEffect | data', data);
-        return data;  
-      })
-      .then(data => { setBookGenres([...data]) });
+      .then(data => { 
+        const newArray = [...props.books];
+        newArray.push(data);
+        console.log(newArray);
+        props.setbooks([...newArray]);
+      });
   
   return daDeets;
 }

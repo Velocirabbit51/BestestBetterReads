@@ -1,8 +1,15 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
 import BookContainer from './BookContainer.jsx';
 import ReviewEntryContainer from './ReviewEntryContainer.jsx'
 
 const MainContainer = () =>  {
+  const [bookinfo, setBookinfo] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/ratings')
+      .then(res => res.json())
+      .then((bookdetails) => {setBookinfo([...bookdetails]) })
+  }, []);
 
 /*
 ! ==================================================
@@ -17,7 +24,7 @@ const MainContainer = () =>  {
 
   return (
     <div id="container border border-3 rounded-3 mt-2 p-2 border-info shadow">
-      <ReviewEntryContainer />
+      <ReviewEntryContainer books={bookinfo} setbooks={setBookinfo}/>
       <div>
         <div className="container h-5">
           <br></br>
@@ -27,7 +34,7 @@ const MainContainer = () =>  {
           <br></br>
         </div>
       </div>
-      <BookContainer />
+      <BookContainer bookinfo={bookinfo}/>
     </div>
   );
 };
