@@ -11,47 +11,6 @@ const RenderFeed = () => {
   const [newestPosts,setNewestPosts] = useState([]);
 
   const postIds = [0, 1, 2];
-  const newestPosts = [
-    {
-      name: "user1",
-      title: "Catcher in the Rye",
-      author: "Salinger",
-      comments: "loved it!",
-      plotline: 10,
-      unpredictability: 10,
-      pace: 10,
-      writingStyle: 10,
-      ending: 10,
-      overallEnjoyability: 10,
-      tags: ["fiction", "angst"]
-    },
-    {
-      name: "user2",
-      title: "Harry Potter and the Half Blood Prince",
-      author: "J.K Rowling",
-      comments: "super fun",
-      plotline: 10,
-      unpredictability: 6,
-      pace: 6,
-      writingStyle: 6,
-      ending: 2,
-      overallEnjoyability: 9,
-      tags: ['mystery','teenage angst']
-    },
-    {
-      name: "God",
-      title: "Green Eggs and Ham",
-      author: "Your Mom",
-      comments: "Greatest Book Ever!",
-      plotline: 10,
-      unpredictability: 10,
-      pace: 10,
-      writingStyle: 10,
-      ending: 10,
-      overallEnjoyability: 10,
-      tags: ['mystery','action','love']
-    }
-  ]
   
   const posts = [];
 

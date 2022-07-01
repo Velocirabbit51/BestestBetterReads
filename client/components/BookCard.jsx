@@ -87,7 +87,7 @@ const BookCard = (bookinfo) => {
       
       <div className ="card-body">
         {/* <p className="card-text">Fantastic book. I was on the edge of my seat the entire time. I can't believe Harry Potter defeated Gandalf to become a Sith Lord.</p> */}
-        <p className="card-text">{comments}</p>
+        <div dangerouslySetInnerHTML={{ __html: comments }} className="card-text"/>
       </div>
     </div>
 )};
